@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hbuas.pojo.entity.SNSUserInfo" table="sns_user_info">
+        <id name="id">
+            <generator class="native" ></generator>
+        </id>
+        <property name="openId" not-null="true"/>
+        <property name="nickname" not-null="true"/>
+        <property name="country" not-null="true"/>
+        <property name="province" not-null="true"/>
+        <property name="sex" not-null="true"/>
+        <property name="city" not-null="true"/>
+        <property name="headImgUrl" not-null="true"/>
+    </class>
+
+
+</hibernate-mapping>
