@@ -2,9 +2,11 @@ package com.hbuas.test;
 
 
 
-import com.hbuas.utils.HibernateUtil;
+
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,11 +27,11 @@ public class Servlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,
             IOException {
-        Configuration configuration = new Configuration().configure();
-        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        WebApplicationContext applicationContext = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
+
+        SessionFactory sessionFactory = (SessionFactory)applicationContext.getBean("sessionFactory");
         System.out.println(sessionFactory);
         System.out.println(sessionFactory.openSession());
-
 
 
     }

@@ -13,39 +13,57 @@
         <param-name>appSecret</param-name>
         <param-value>d4624c36b6795d1d99dcf0547af5443d</param-value>
     </context-param>
-
-
-
-    <!--过滤字符编码为UTF-8-->
+     <!--  配置springIOC容器-->
+     <context-param>
+         <param-name>contextConfigLocation</param-name>
+         <param-value>classpath:confg/spring/applicationContext.xml</param-value>
+     </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <!--配置编码过滤-->
     <filter>
-        <filter-name>encoding</filter-name>
-        <filter-class>com.hbuas.filter.EncodingFilter</filter-class>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+            <init-param>
+                <param-name>encoding</param-name>
+                <param-value>utf-8</param-value>
+            </init-param>
     </filter>
-
     <filter-mapping>
-        <filter-name>encoding</filter-name>
+        <filter-name>CharacterEncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
-        <dispatcher>REQUEST</dispatcher>
-        <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
 
-    <!--登陆权限控制-->
-    <filter>
-        <filter-name>login</filter-name>
-        <filter-class>com.hbuas.filter.LoginFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>login</filter-name>
-        <url-pattern>/shop</url-pattern>
-        <url-pattern>/test</url-pattern>
-        <dispatcher>REQUEST</dispatcher>
-        <dispatcher>FORWARD</dispatcher>
-    </filter-mapping>
+    <!-- log4j2-begin -->
+         <listener>
+             <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+        </listener>
+         <filter><filter-name>log4jServletFilter</filter-name>
 
-    <!--mysql数据源，使用tomcat-jdbc-->
-    <resource-ref>
-        <res-ref-name>jdbc/mysql/yuanlin</res-ref-name>
-        <res-type>javax.sql.DataSource</res-type>
-        <res-auth>Container</res-auth>
-    </resource-ref>
+             <filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>
+         </filter>
+         <filter-mapping>
+             <filter-name>log4jServletFilter</filter-name>
+                     <url-pattern>/*</url-pattern>
+             <dispatcher>REQUEST</dispatcher>
+             <dispatcher>FORWARD</dispatcher>
+             <dispatcher>INCLUDE</dispatcher>
+             <dispatcher>ERROR</dispatcher>
+        </filter-mapping>
+         <!-- log4j2-end -->
+    <!---配置spring mvc-->
+    <servlet>
+        <servlet-name>springDispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:confg/spring/mvc-dispatcher-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springDispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 </web-app>

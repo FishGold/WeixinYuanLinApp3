@@ -16,6 +16,7 @@ import java.net.URLEncoder;
 /**
  * Created by ZSS on 2016/4/28.
  */
+@WebFilter(urlPatterns = {"/shop","/test"})
 public class LoginFilter implements Filter {
     private Logger logger = LogManager.getLogger();
     public void destroy() {
