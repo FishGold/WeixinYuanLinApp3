@@ -14,7 +14,7 @@
         <id name="id">
             <generator class="native" ></generator>
         </id>
-        <property name="openId" not-null="true"/>
+        <property name="openId" not-null="true" unique="true"/>
         <property name="nickname" not-null="true"/>
         <property name="country" not-null="true"/>
         <property name="province" not-null="true"/>

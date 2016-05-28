@@ -80,5 +80,17 @@ public class SNSUserInfo {
         this.headImgUrl = headImgUrl;
     }
 
-
+    @Override
+    public String toString() {
+        return "SNSUserInfo{" +
+                "openId='" + openId + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", sex='" + sex + '\'' +
+                ", country='" + country + '\'' +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", headImgUrl='" + headImgUrl + '\'' +
+                ", id=" + id +
+                '}';
+    }
 }

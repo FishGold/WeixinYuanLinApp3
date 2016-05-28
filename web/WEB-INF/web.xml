@@ -13,6 +13,27 @@
         <param-name>appSecret</param-name>
         <param-value>d4624c36b6795d1d99dcf0547af5443d</param-value>
     </context-param>
+    <!-- log4j2-begin -->
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:WEB-INF/log4j2.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+    </listener>
+    <!--<filter>-->
+        <!--<filter-name>log4jServletFilter</filter-name>-->
+        <!--<filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>log4jServletFilter</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+        <!--<dispatcher>REQUEST</dispatcher>-->
+        <!--<dispatcher>FORWARD</dispatcher>-->
+        <!--<dispatcher>INCLUDE</dispatcher>-->
+        <!--<dispatcher>ERROR</dispatcher>-->
+    <!--</filter-mapping>-->
+    <!-- log4j2-end-->
      <!--  配置springIOC容器-->
      <context-param>
          <param-name>contextConfigLocation</param-name>
@@ -35,23 +56,7 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!-- log4j2-begin -->
-         <listener>
-             <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
-        </listener>
-         <filter><filter-name>log4jServletFilter</filter-name>
 
-             <filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>
-         </filter>
-         <filter-mapping>
-             <filter-name>log4jServletFilter</filter-name>
-                     <url-pattern>/*</url-pattern>
-             <dispatcher>REQUEST</dispatcher>
-             <dispatcher>FORWARD</dispatcher>
-             <dispatcher>INCLUDE</dispatcher>
-             <dispatcher>ERROR</dispatcher>
-        </filter-mapping>
-         <!-- log4j2-end -->
     <!---配置spring mvc-->
     <servlet>
         <servlet-name>springDispatcher</servlet-name>
@@ -66,4 +71,13 @@
         <servlet-name>springDispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <filter>
+        <filter-name>oauth</filter-name>
+        <filter-class>com.hbuas.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>oauth</filter-name>
+        <url-pattern>/shop/userCenter</url-pattern>
+        <url-pattern>/test</url-pattern>
+    </filter-mapping>
 </web-app>

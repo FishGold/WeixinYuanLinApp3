@@ -14,7 +14,7 @@
 </head>
 <body>
 <h2>获取用户信息</h2>
-<img src="${user.headImgUrl}"/>
+<img src="${user.headImgUrl}" style="width: 150px;height: 150px"/>
   <h3>openid:${user.openId}</h3>
   <h3>nickname:${user.nickname}</h3>
   <h3>sex:${user.sex}</h3>

@@ -16,7 +16,6 @@ import java.net.URLEncoder;
 /**
  * Created by ZSS on 2016/4/28.
  */
-@WebFilter(urlPatterns = {"/shop","/test"})
 public class LoginFilter implements Filter {
     private Logger logger = LogManager.getLogger();
     public void destroy() {
@@ -27,8 +26,8 @@ public class LoginFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest)req;
         HttpServletResponse response = (HttpServletResponse)resp;
         HttpSession session = request.getSession();
-        SNSUserInfo snsUserInfo = (SNSUserInfo)session.getAttribute("user");
-        if (snsUserInfo == null){
+        String openid = (String)session.getAttribute("openid");
+        if (openid == null){
             String appId = req.getServletContext().getInitParameter("appId");
             String redirect_uri = URLEncoder.encode("http://www.yunjoke.com/yuanlin/oauth", "utf-8");
             String state = request.getRequestURI();
@@ -37,7 +36,7 @@ public class LoginFilter implements Filter {
                     .replaceFirst("REDIRECT_URI",redirect_uri)
                     .replaceFirst("SCOPE",scope)
                     .replaceFirst("STATE",state);
-            logger.error(url);
+            logger.info("用户网页授权");
             response.sendRedirect(url);
         } else
             chain.doFilter(request,response);

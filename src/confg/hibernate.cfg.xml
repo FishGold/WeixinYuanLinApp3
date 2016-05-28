@@ -18,5 +18,7 @@
 
         <!-- 二级缓存相关 -->
 
+        <!--使用getCurrrentSession相关配置-->
+        <property name="current_session_context_class">thread</property>
     </session-factory>
 </hibernate-configuration>

@@ -69,7 +69,7 @@ public class Test {
         ViewButton btn31 = new ViewButton();//11111111111111111click
         btn31.setName("园林社区");
         btn31.setType("view");
-        btn31.setUrl("http://www.yunjoke.com/yuanlin/wc/head.html");
+        btn31.setUrl("http://www.yunjoke.com/yuanlin/wc/home.html");
 
         ViewButton btn32 = new ViewButton();
         btn32.setName("我的商城");
@@ -118,8 +118,8 @@ public class Test {
         System.out.println(token);
         if (null != token) {
             // 创建菜单
-            boolean result = MenuUtil.createMenu(getMenu(), token.getAccessToken());
-           // boolean result = MenuUtil.deleteMenu(token.getAccessToken());
+             boolean result = MenuUtil.createMenu(getMenu(), token.getAccessToken());
+            //boolean result = MenuUtil.deleteMenu(token.getAccessToken());
 
             // 判断菜单创建结果
             if (result)
