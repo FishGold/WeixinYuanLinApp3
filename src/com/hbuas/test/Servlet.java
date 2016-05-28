@@ -4,11 +4,10 @@ package com.hbuas.test;
 
 
 import com.hbuas.dao.SNSUserDao;
-import com.hbuas.dao.impl.SNSUserDaoImpl;
+import com.hbuas.daoImpl.SNSUserDaoImpl;
 import com.hbuas.pojo.entity.SNSUserInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.hibernate.SessionFactory;
 
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -37,15 +36,15 @@ public class Servlet extends HttpServlet {
         SNSUserDao snsUserDao = applicationContext.getBean(SNSUserDaoImpl.class);
 
         SNSUserInfo snsUserInfo = new SNSUserInfo();
-        snsUserInfo.setCity("zuizhou");
-        snsUserInfo.setCountry("zhongguo");
+        snsUserInfo.setCity("zuizhou3123");
+        snsUserInfo.setCountry("zhongguo421");
         snsUserInfo.setHeadImgUrl("http://www");
         snsUserInfo.setNickname("zss");
-        snsUserInfo.setOpenId("JHFIOSJ3892fjio2");
+        snsUserInfo.setOpenId("JHFIOSJ3892fjio225725731231");
         snsUserInfo.setProvince("中国湖北");
         snsUserInfo.setSex("男");
         snsUserDao.insertSNSUser(snsUserInfo);
-        SNSUserInfo snsUserInfo1 = snsUserDao.getSNSUserInfo("JHFIOSJ3892fjio");
+        SNSUserInfo snsUserInfo1 = snsUserDao.getSNSUserInfo("JHFIOSJ3892fjio225725731231");
         logger.info(snsUserInfo1.toString());
 
 

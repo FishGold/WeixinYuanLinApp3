@@ -1,4 +1,4 @@
-package com.hbuas.pojo.entity;
+package com.hbuas.pojo.entity.shop;
 
 /**
  * Created by zss on 2016/5/27.

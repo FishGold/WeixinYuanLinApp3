@@ -1,6 +1,5 @@
 package com.hbuas.pojo.entity;
 
-import java.util.List;
 
 /**
  * Created by ZSS on 2016/4/27.

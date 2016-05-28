@@ -12,7 +12,7 @@
 <hibernate-mapping>
     <class name="com.hbuas.pojo.entity.SNSUserInfo" table="sns_user_info">
         <id name="id">
-            <generator class="native" ></generator>
+            <generator class="native"></generator>
         </id>
         <property name="openId" not-null="true" unique="true"/>
         <property name="nickname" not-null="true"/>

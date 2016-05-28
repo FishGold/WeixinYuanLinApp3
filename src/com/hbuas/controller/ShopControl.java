@@ -22,10 +22,15 @@ public class ShopControl {
     private HttpSession session;
     @RequestMapping("/userCenter")
     public String show(ModelMap map){
-        String openid = session.getAttribute("openid").toString();
+        String openid = (String)session.getAttribute("openId");
         SNSUserInfo snsUserInfo = snsUserDao.getSNSUserInfo(openid);
         map.addAttribute("user",snsUserInfo);
         return "showInfo.jsp";
+    }
+    @RequestMapping("/home")
+    public String home(ModelMap map){
+
+        return "shop/home.jsp";
     }
 
 }

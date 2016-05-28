@@ -1,4 +1,4 @@
-package com.hbuas.pojo.entity;
+package com.hbuas.pojo.entity.shop;
 
 import java.util.Date;
 

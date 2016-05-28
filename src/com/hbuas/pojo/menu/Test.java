@@ -62,7 +62,7 @@ public class Test {
         ViewButton btn23 = new ViewButton();
         btn23.setName("趣商城");
         btn23.setType("view");
-        btn23.setUrl("http://www.yunjoke.com/yuanlin/zss/shop.html");
+        btn23.setUrl("http://www.yunjoke.com/yuanlin/shop/home");
 
 
 
@@ -118,8 +118,8 @@ public class Test {
         System.out.println(token);
         if (null != token) {
             // 创建菜单
-             boolean result = MenuUtil.createMenu(getMenu(), token.getAccessToken());
-            //boolean result = MenuUtil.deleteMenu(token.getAccessToken());
+            boolean result = MenuUtil.createMenu(getMenu(), token.getAccessToken());
+           // boolean result = MenuUtil.deleteMenu(token.getAccessToken());
 
             // 判断菜单创建结果
             if (result)

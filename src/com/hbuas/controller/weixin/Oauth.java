@@ -1,4 +1,4 @@
-package com.hbuas.controller;
+package com.hbuas.controller.weixin;
 
 import com.hbuas.dao.SNSUserDao;
 import com.hbuas.pojo.entity.SNSUserInfo;
@@ -31,7 +31,6 @@ public class Oauth {
     private SNSUserDao snsUserDao;
     @RequestMapping(value = "/oauth",method = RequestMethod.GET)
     public String oauth(@RequestParam String code,@RequestParam String state){
-        logger.info("code:"+code);
         logger.info("state:"+state);
         if (code != null && !"".equals(code)){
             String appId = servletContext.getInitParameter("appId");
@@ -40,19 +39,17 @@ public class Oauth {
             if (webTokenJson != null){
                 String access_token = webTokenJson.getString("access_token");
                 String openid = webTokenJson.getString("openid");
-                logger.info(access_token);
                 logger.info(openid);
                 SNSUserInfo userInfo =OAuthUtil.getUserInfo(access_token,openid);
-               boolean result =  snsUserDao.insertSNSUser(userInfo);
+                boolean result =  snsUserDao.insertSNSUser(userInfo);
+                logger.info("oauth得到的结果"+result);
                 if (result == true){
-                    session.setAttribute("openid",openid);
+                    session.setAttribute("openId",openid);
+                    logger.info("redirect:http://www.yunjoke.com"+state);
                     return  "redirect:http://www.yunjoke.com"+state;
                 }else {
-                    logger.error("用户插入数据库时错误！");
                     return  "oauthError.jsp";
                 }
-
-
             }else {
                 logger.error("webTokenJson=null"+"获取webToen失败,重定向error.jsp");
                 return  "oauthError.jsp";

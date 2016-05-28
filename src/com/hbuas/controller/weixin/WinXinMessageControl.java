@@ -1,6 +1,6 @@
-package com.hbuas.controller;
+package com.hbuas.controller.weixin;
 
-import com.hbuas.service.impl.MessageService;
+import com.hbuas.serviceImpl.MessageService;
 import com.hbuas.utils.SignUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

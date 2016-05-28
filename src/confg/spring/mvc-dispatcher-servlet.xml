@@ -45,7 +45,7 @@
     </bean>
     <!--
         <bean name="messageService"
-            class="com.hbuas.service.impl.MessageService"></bean>
+            class="com.hbuas.serviceImpl.MessageService"></bean>
     -->
 
 

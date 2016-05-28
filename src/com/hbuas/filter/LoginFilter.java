@@ -1,12 +1,12 @@
 package com.hbuas.filter;
 
-import com.hbuas.pojo.entity.SNSUserInfo;
+
 import com.hbuas.utils.OAuthUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -26,8 +26,9 @@ public class LoginFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest)req;
         HttpServletResponse response = (HttpServletResponse)resp;
         HttpSession session = request.getSession();
-        String openid = (String)session.getAttribute("openid");
-        if (openid == null){
+        String openId = (String)session.getAttribute("openId");
+        logger.info("用户经过loginFilter"+openId);
+        if (openId== null){
             String appId = req.getServletContext().getInitParameter("appId");
             String redirect_uri = URLEncoder.encode("http://www.yunjoke.com/yuanlin/oauth", "utf-8");
             String state = request.getRequestURI();
