@@ -10,15 +10,26 @@
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
 
         <!-- 是否显示及格式化 SQL -->
-        <property name="hibernate.show_sql">true</property>
+        <!--<property name="hibernate.show_sql">true</property>-->
         <property name="hibernate.format_sql">true</property>
 
         <!-- 生成数据表的策略 -->
         <property name="hibernate.hbm2ddl.auto">update</property>
-
+        
         <!-- 二级缓存相关 -->
 
         <!--使用getCurrrentSession相关配置-->
-        <property name="current_session_context_class">thread</property>
+        <!--<property name="hibernate.current_session_context_class">thread</property>-->
+
+        <!---基于注解配置的实体-->
+        <!--1、商城-->
+        <mapping class="com.hbuas.pojo.entity.shop.Ware"></mapping>
+        <!--<mapping class="com.hbuas.pojo.entity.shop.Order"></mapping>-->
+        <mapping class="com.hbuas.pojo.entity.shop.WareClassify"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.ShopImageUrl"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.PlantCategory"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.ShopCarousel"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.BuyRecord"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.ShopUserColletion"></mapping>
     </session-factory>
 </hibernate-configuration>
