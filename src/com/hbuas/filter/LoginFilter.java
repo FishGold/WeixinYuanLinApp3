@@ -26,9 +26,9 @@ public class LoginFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest)req;
         HttpServletResponse response = (HttpServletResponse)resp;
         HttpSession session = request.getSession();
-        String openId = (String)session.getAttribute("openId");
-        logger.info("用户经过loginFilter"+openId);
-        if (openId== null){
+        Integer userId = (Integer)session.getAttribute("userId");
+        logger.info("用户经过loginFilter"+userId);
+        if (userId== null){
             String appId = req.getServletContext().getInitParameter("appId");
             String redirect_uri = URLEncoder.encode("http://www.yunjoke.com/yuanlin/oauth", "utf-8");
             String state = request.getRequestURI();

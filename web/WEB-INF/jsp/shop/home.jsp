@@ -59,19 +59,19 @@
       </a>
     </li>
     <li>
-      <a href="MutityFuction.html">
+      <a href="recommend?page=0">
         <span class="glyphicon glyphicon-heart-empty bg_two"> </span>
         <p>推荐商品</p>
       </a>
     </li>
     <li>
-      <a href="MutityFuction.html">
+      <a href="hot?page=0">
         <span class="glyphicon glyphicon-fire bg_three"> </span>
         <p>热卖商品</p>
       </a>
     </li>
     <li>
-      <a href="userCenter">
+      <a href="/yuanlin/shopUserCenter/home">
         <span class="glyphicon glyphicon-user bg_four"> </span>
         <p>个人中心</p>
       </a>
@@ -80,7 +80,7 @@
 </div>
 <div id="fix_menu" class="text-center">
   <div class="menu_first">
-    <a href="shopCart.html">
+    <a href="/yuanlin/shopUserCenter/shopCart">
       <span class="glyphicon glyphicon-shopping-cart"> </span>
       <p>购物车</p>
     </a>
@@ -92,12 +92,12 @@
     <c:forEach items="${wares}" var="waress">
       <div class="sort_item">
         <div class="sort_item_head">
-          <span class="name"><span class="glyphicon glyphicon-tree-conifer"> </span>${waress.key}</span>
-          <span class="pull-right more" >更多<span class="glyphicon glyphicon-chevron-right"></span></span>
+          <span class="name"><span class="glyphicon glyphicon-tree-conifer"> </span>${waress.key.name}</span>
+          <a class="pull-right more" href="categoryMore?categoryId=${waress.key.categoryId}&page=0" >更多<span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
         <div class="sort_item_body">
           <c:forEach items="${waress.value}" var="ware">
-            <a class="one_img" href="#">
+            <a class="one_img" href="classifyMore?classifyId=${ware.wareClassify.classifyId}&page=0">
               <img src="${ware["imgUrl"][0]["imgUrl"]}" >
               <p class="text-center">${ware["name"]}</p>
             </a>
@@ -109,5 +109,32 @@
 
   </c:forEach>
 </div>
+
+<div class="guss text-center">
+  <p><span class="glyphicon glyphicon-heart"> </span>猜你喜欢</p>
+</div>
+<div id="content">
+  <c:forEach items="${likes}" var="ware">
+    <div class="main col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <div class="main_item">
+        <a href="wareDetail?wareId=${ware.wareId}">
+          <img src="${ware["imgUrl"][0]["imgUrl"]}" class="tree">
+          <div class="item_slide">
+            <p class="text">${ware.shortDescription}</p>
+          </div>
+          <div class="money">
+            <span class="price">&yen;${ware.oldPrice}</span>
+            <s>&yen;${ware.price}</s><br>
+            <span class="count">月销${ware.salesNum}棵</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </c:forEach>
+
+  </div>
+
+</div>
 </body>
+
 </html>

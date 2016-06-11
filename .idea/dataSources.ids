@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - weixin@localhost" uuid="7ea25a1a-5fbd-42e3-a3a8-d32729db9a44">
+    <database-info product="MySQL" version="5.6.27" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="weixin"/>
+    <table name="plantcategory" schema="" catalog="weixin" type="TABLE">
+      <column name="categoryId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="categoryId"/>
+      <exported-key name="FK_6xhi9f7edjko09q86lfhufx92" table="plantcategory_wareclassify" schema="" catalog="weixin" columns="PlantCategory_categoryId"/>
+    </table>
+    <table name="plantcategory_wareclassify" schema="" catalog="weixin" type="TABLE">
+      <column name="PlantCategory_categoryId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="list_classifyId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="FK_6xhi9f7edjko09q86lfhufx92" columns="PlantCategory_categoryId" ref-table="plantcategory" ref-schema="" ref-catalog="weixin" ref-columns="categoryId" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_ksv74nysbkstfwc8ai3y5at5n" columns="list_classifyId" ref-table="wareclassify" ref-schema="" ref-catalog="weixin" ref-columns="classifyId" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="UK_ksv74nysbkstfwc8ai3y5at5n" unique="true" columns="list_classifyId"/>
+      <index name="FK_6xhi9f7edjko09q86lfhufx92" unique="false" columns="PlantCategory_categoryId"/>
+      <index name="FK_ksv74nysbkstfwc8ai3y5at5n" unique="false" columns="list_classifyId"/>
+    </table>
+    <table name="shopimageurl" schema="" catalog="weixin" type="TABLE">
+      <column name="wareId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="imgUrl" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="imgUrlId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="wareId"/>
+      <exported-key name="FK_dwrc4bvdmk8r9t1m1x6jkknul" table="ware_shopimageurl" schema="" catalog="weixin" columns="imgUrl_wareId"/>
+    </table>
+    <table name="sns_user_info" schema="" catalog="weixin" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="openId" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nickname" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="country" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="province" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sex" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="headImgUrl" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UK_1eixoe0jqxv7k56p3r6e8wcjy" unique="true" columns="openId"/>
+    </table>
+    <table name="ware" schema="" catalog="weixin" type="TABLE">
+      <column name="wareId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="area" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="areaDetail" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="categoryId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="cw" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dbh" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="gd" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="height" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="oldPrice" sqlType="FLOAT" precision="12" scale="0" nullable="false" jdbcType="7"/>
+      <column name="price" sqlType="FLOAT" precision="12" scale="0" nullable="false" jdbcType="7"/>
+      <column name="remainNum" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="shortDescription" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="storeId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="wareClassify_classifyId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="wareId"/>
+      <foreign-key name="FK_f31p908pyc0xrridkkqcferum" columns="wareClassify_classifyId" ref-table="wareclassify" ref-schema="" ref-catalog="weixin" ref-columns="classifyId" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_2jxibkksl154aaxwqv2vuisvc" table="ware_shopimageurl" schema="" catalog="weixin" columns="Ware_wareId"/>
+      <exported-key name="FK_iuti0ppn46rd9sayad75rgrsj" table="wareclassify_ware" schema="" catalog="weixin" columns="list_wareId"/>
+      <index name="FK_f31p908pyc0xrridkkqcferum" unique="false" columns="wareClassify_classifyId"/>
+    </table>
+    <table name="ware_shopimageurl" schema="" catalog="weixin" type="TABLE">
+      <column name="Ware_wareId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="imgUrl_wareId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="FK_2jxibkksl154aaxwqv2vuisvc" columns="Ware_wareId" ref-table="ware" ref-schema="" ref-catalog="weixin" ref-columns="wareId" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_dwrc4bvdmk8r9t1m1x6jkknul" columns="imgUrl_wareId" ref-table="shopimageurl" ref-schema="" ref-catalog="weixin" ref-columns="wareId" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="UK_dwrc4bvdmk8r9t1m1x6jkknul" unique="true" columns="imgUrl_wareId"/>
+      <index name="FK_2jxibkksl154aaxwqv2vuisvc" unique="false" columns="Ware_wareId"/>
+      <index name="FK_dwrc4bvdmk8r9t1m1x6jkknul" unique="false" columns="imgUrl_wareId"/>
+    </table>
+    <table name="wareclassify" schema="" catalog="weixin" type="TABLE">
+      <column name="classifyId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="classifyId"/>
+      <exported-key name="FK_ksv74nysbkstfwc8ai3y5at5n" table="plantcategory_wareclassify" schema="" catalog="weixin" columns="list_classifyId"/>
+      <exported-key name="FK_f31p908pyc0xrridkkqcferum" table="ware" schema="" catalog="weixin" columns="wareClassify_classifyId"/>
+      <exported-key name="FK_f2dip9e123eoqownoalsw9ulc" table="wareclassify_ware" schema="" catalog="weixin" columns="WareClassify_classifyId"/>
+    </table>
+    <table name="wareclassify_ware" schema="" catalog="weixin" type="TABLE">
+      <column name="WareClassify_classifyId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="list_wareId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="FK_f2dip9e123eoqownoalsw9ulc" columns="WareClassify_classifyId" ref-table="wareclassify" ref-schema="" ref-catalog="weixin" ref-columns="classifyId" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_iuti0ppn46rd9sayad75rgrsj" columns="list_wareId" ref-table="ware" ref-schema="" ref-catalog="weixin" ref-columns="wareId" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="UK_iuti0ppn46rd9sayad75rgrsj" unique="true" columns="list_wareId"/>
+      <index name="FK_f2dip9e123eoqownoalsw9ulc" unique="false" columns="WareClassify_classifyId"/>
+      <index name="FK_iuti0ppn46rd9sayad75rgrsj" unique="false" columns="list_wareId"/>
+    </table>
+  </data-source>
+</component>

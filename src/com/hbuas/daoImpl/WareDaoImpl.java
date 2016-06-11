@@ -1,6 +1,7 @@
 package com.hbuas.daoImpl;
 
 import com.hbuas.dao.WareDao;
+import com.hbuas.pojo.entity.shop.Assess;
 import com.hbuas.pojo.entity.shop.PlantCategory;
 import com.hbuas.pojo.entity.shop.Ware;
 import com.hbuas.pojo.entity.shop.WareClassify;
@@ -9,7 +10,6 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -24,8 +24,11 @@ public class WareDaoImpl implements WareDao {
     private SessionFactory sessionFactory;
     private Logger logger = LogManager.getLogger();
     @Override
-    public List<Ware> getWaresByClassifyId(int classifyId, int page, int num) {
-        return null;
+    public List<Ware> getWaresByClassifyId(int classifyId) {
+        Session session =sessionFactory.openSession();
+        WareClassify wareClassify =(WareClassify)session.load(WareClassify.class, classifyId);
+
+        return wareClassify.getList();
     }
 
     @Override
@@ -57,22 +60,68 @@ public class WareDaoImpl implements WareDao {
     }
 
     @Override
-    public Map<String,List<Ware>> getWaresByCategoryId(int categoryId,  int num) {
+    public Map<PlantCategory,List<Ware>> getWaresByCategoryId(int categoryId,  int num,boolean onlyFirst) {
         logger.info("sessionFactory依赖注入成功",sessionFactory);
         Session session = sessionFactory.getCurrentSession();
-        Map<String,List<Ware>> wareMap = new HashMap<String, List<Ware>>();
+        Map<PlantCategory,List<Ware>> wareMap = new HashMap<PlantCategory, List<Ware>>();
 
         //查询这一类
         PlantCategory plantCategory= (PlantCategory)session.get(PlantCategory.class,categoryId);
-        logger.info("查询到了植物分类",plantCategory);
+        logger.info("查询到了植物分类"+plantCategory);
         List<WareClassify> classifyList = plantCategory.getList();
         logger.info("这个分类有"+classifyList.size()+"种商品");
+        logger.info(classifyList.get(0).getName());
         List<Ware> list = new ArrayList<Ware>();
         for (int i=0;i<classifyList.size()&&i<num;i++){
-            list.add(classifyList.get(i).getList().get(0));
+            if(onlyFirst ==true)
+                list.add(classifyList.get(i).getList().get(0));
+            else
+                list.addAll(classifyList.get(i).getList());
         }
-        wareMap.put(plantCategory.getName(), list);
-        logger.info("当前session"+session.hashCode());
+        wareMap.put(plantCategory, list);
+        logger.info("当前session" + session.hashCode());
         return wareMap;
+    }
+
+    @Override
+    public List<Ware> getWares(int page, int num) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Ware ");
+        query.setFirstResult(page*num);
+        query.setMaxResults(num);
+        return query.list();
+    }
+    public Ware getWareById(int wareId){
+        Session session = sessionFactory.getCurrentSession();
+        Ware ware = (Ware)session.get(Ware.class,wareId);
+        logger.info(ware.getWareHeights());
+        logger.info(ware.getWareHeights().getMaxDj());
+        return ware;
+    }
+
+    @Override
+    public int getAssessNum(int wareId) {
+        int num = 0;
+        Session session = sessionFactory.getCurrentSession();
+        Ware ware = (Ware)session.load(Ware.class,wareId);
+        num = ware.getAssess().size();
+        return num;
+    }
+
+    @Override
+    public WareClassify getClassifyById(int classifyId) {
+        Session session =sessionFactory.getCurrentSession();
+        WareClassify wareClassify = (WareClassify)session.load(WareClassify.class,classifyId);
+        return wareClassify;
+    }
+
+    @Override
+    public List<Ware> getHotWares(int page,int num) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Ware order by salesNum desc ");
+        query.setFirstResult(page*num);
+        query.setMaxResults(num);
+        List<Ware> list = query.list();
+        return list;
     }
 }

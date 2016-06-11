@@ -21,6 +21,7 @@
         <property name="sex" not-null="true"/>
         <property name="city" not-null="true"/>
         <property name="headImgUrl" not-null="true"/>
+        <one-to-one name="shopUser" cascade="all"></one-to-one>
     </class>
 
 

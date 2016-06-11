@@ -1,0 +1,141 @@
+body{
+    background-color:lightgray;
+    height: 500px;
+}
+header{
+    margin-top: 0px;
+    margin-bottom: 2%;
+    padding: 5px;
+    background-color: #ffffff;
+}
+.cart_item{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.cart_item_head{
+    background-color: #ffffff;
+    padding: 10px;
+    font-size: 12px;
+    /*background-image: url("../images/bg3.jpg");*/
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+
+}
+.head_right{
+    color: #808080;
+    font-family: "楷体";
+}
+.cart_item_body{
+    background-color: rgba(246, 246, 246, 0.95);
+    width: 100%;
+}
+.cart_item_third  p{
+    margin-bottom: 0px;
+    padding-top: 15px;
+}
+.cart_item_first{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.cart_item_first input{
+    width: 15px;
+    height: 15px;
+}
+.cart_item_second{
+    padding-top: 15px;
+    max-width:200px;
+    font-size: 12px;
+}
+.cart_item_second p{
+    color: darkgreen;
+    font: 12px/1.5 Tahoma,Helvetica,Arial,'宋体',sans-serif;
+}
+.cart_item_second p{
+    margin-top: 6px;
+    margin-bottom: 0px;
+}
+.second_num{
+    text-decoration: underline;
+}
+.cart_item_third{
+    padding-left: 10px;
+}
+.cart_item_third p{
+    font-size: 12px;
+    /*position: absolute;*/
+    /*top: 20px;*/
+}
+.third_money{
+    /*position: absolute;*/
+    /*bottom: 15px;*/
+    color: red;
+
+}
+.third_num{
+    padding-left: 20px;
+    /*right: 20px;*/
+}
+.third_num .glyphicon-minus{
+    margin-right: 15px;
+}
+.third_num .number{
+    position: relative;
+    left: -44px;
+}
+.third_num .glyphicon{
+    background-color:lightgray;
+    padding: 8px;
+     font-size: 10px;
+    color: #808080;
+}
+#footer{
+    border-top: 1px solid lightgray;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 8px;
+}
+#footer button{
+    font-size: 12px;
+    position: relative;
+    top: 3px;
+;
+}
+.footer_three{
+   padding-top: 8px;
+}
+#footer .text_muted{
+    font-size: 12px;
+}
+#all_select{
+   margin-top: 11px;
+    width: 15px;
+    height: 15px;
+}
+.footer_one span{
+   position: relative;
+    top: -2px;
+}
+.modal-dialog{
+    margin: 8%;
+}
+.modal-content{
+   margin-top: 60%;
+}
+.modal-content p{
+    margin-top: 15px;
+    font-size: 12px;
+    color: #808080;
+}
+.modal-content hr{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.modal-content button{
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+.delete_clazz{
+    padding-right: 10%;
+    padding-left: 10%;
+}

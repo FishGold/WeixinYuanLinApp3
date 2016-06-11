@@ -25,7 +25,6 @@ public class ShopCarouselDaoImpl implements ShopCarouselDao {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from ShopCarousel");
         List<ShopCarousel> list= query.list();
-        //session.close();
          logger.info("当前session"+session.hashCode());
         return list;
     }
