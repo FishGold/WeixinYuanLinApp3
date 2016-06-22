@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>探索发现</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5CGzLoeWbAMrUYf7wgb3iHzc"></script>
+    <link rel="stylesheet" href="../css/report.css">
+</head>
+<body onload="loadAddress()">
+
+<div id="myCarousel" class="carousel slide">
+
+    <ol class="carousel-indicators" style="margin-bottom: 20px">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="../images/plants/illPlant.jpg" alt="First slide">
+        </div>
+        <div class="item">
+            <img src="../images/plants/illPlant_2.jpg" alt="Second slide">
+        </div>
+        <div class="item">
+            <img src="../images/plants/illPlant_3.jpg" alt="Third slide">
+        </div>
+    </div>
+
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+    <p id="title"><i class="icon-search"></i>发现植物</p>
+</div>
+
+
+<form action="/report/plant" method="post" enctype="multipart/form-data" onsubmit="return checksubmit();">
+
+    <label><i class="icon-pencil"></i>添加植物现状描述</label>
+    <textarea maxlength="100" rows="5" autofocus placeholder="100字以内：" class="input-lg btn-block info" name="describe_about_plant" required></textarea>
+<hr>
+    <label><i class="icon-pencil"></i>植物具体位置描述</label>
+    <textarea maxlength="50" rows="3" placeholder="50字以内" class="input-lg btn-block info" name="detail_about_address" required></textarea>
+
+    <p>
+        <span class="glyphicon glyphicon-map-marker address"  id="address_city"></span>
+        <input name="address_about_plant" class="address" id="address_about_plant">
+    </p>
+<br><hr>
+    <label><i class="icon-cloud-upload"></i>上传照片:<span id="showImageName"></span></label>
+
+    <div id="localPhoto">
+        <img src="../images/util/package.png" class="photo_icon" id="localChose">
+        <input name="reportPlantImage" id="imgFile" onchange="drawImage()" type="file" accept="image/*"/>
+    </div>
+<hr>
+    <input type="submit" value="确认提交" class="btn btn-block btn-primary" id="sub" >
+
+</form>
+<script>
+    function checksubmit(){
+        var file = document.getElementById("imgFile");
+        if(file.value==""){
+            alert("请选择图片");
+            return false;
+        }
+        else if((file.files[0].size/1024)>5000){
+            alert("图片超过5M");
+            return false;
+        }
+        else{
+            $(".sub").hide();
+            return true;
+        }
+        return false;
+    }
+</script>
+</body>
+</html>
+<script type="text/javascript">
+    var showImage = document.getElementById("localChose");
+    var inputImage = document.getElementById("imgFile");
+    function loadAddress(){
+        $("#address_about_plant").hide();
+        var point;
+        var geolocation = new BMap.Geolocation();
+        geolocation.getCurrentPosition(function (r) {
+            if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                point =  new BMap.Point(r.point.lng, r.point.lat);
+                var gc = new BMap.Geocoder();
+                gc.getLocation(point, function(rs){
+                    var addComp = rs.addressComponents;
+                    var addressInfo = " "+addComp.province + "" + addComp.city + "" + addComp.district + "" + addComp.street + "" + addComp.streetNumber;
+                    $("#address_city").html(addressInfo);
+                    $("#address_about_plant").val(addressInfo);
+                });
+            }
+            else {
+                alert("自动定位失败，请手动添加");
+            }
+        }, {enableHighAccuracy: true});
+    }
+    function drawImage(){
+        $("#showImageName").html(inputImage.files[0].name);
+    }
+    $('.carousel').carousel();
+    $('.item').height((screen.height/4));
+</script>
