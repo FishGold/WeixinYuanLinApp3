@@ -1,0 +1,45 @@
+html{
+    background-color: #ffffff;
+    width: 100%;
+}
+body{
+    background-color: inherit;
+    width: 100%;
+}
+div{
+    position: relative;
+}
+.plants-pic{
+    width: 70px;
+    height: 70px;
+}
+hr{
+    border: 1px solid lightcyan;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: lighter;
+}
+label{
+    vertical-align: middle;
+    font-size: 1px;
+    font-weight: lighter;
+}
+header{
+    width: inherit;
+    position: relative;
+}
+#header{
+    width: 100%;
+}
+#title{
+    position: absolute;
+    text-align: center;
+    background-color: mediumblue;
+    opacity: 0.6;
+    color: #ffffff;
+    letter-spacing: 10px;
+    bottom: 0px;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 0px;
+}

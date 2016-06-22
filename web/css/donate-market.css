@@ -1,0 +1,60 @@
+html{
+    background-color: #808080;
+    width: 100%;
+    font-family: "Lucida Grande", "Tahoma", serif;
+}
+body{
+    width: 100%;
+    margin: auto;
+}
+table{
+    margin-top: 5px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid green;
+}
+
+tr{
+    width: 100%;
+}
+.pic-1{
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+.user-head{
+    width: 40px;
+    height: 40px;
+}
+.userinfo{
+    vertical-align: middle;
+}
+.username{
+    color: crimson;
+    font-size: 15px;
+}
+.time{
+    font-size: 10px;
+    font-weight: lighter;
+    border-right: 1px solid #808080;
+    padding-right: 10px;
+}
+.phone{
+    font-weight: lighter;
+    font-size: 10px;
+}
+.reason{
+    font-weight: lighter;
+}
+.user-adopt{
+    float: right;
+    color: limegreen;
+    letter-spacing: 5px;
+    border: 1px solid green;
+    padding: 5px;
+    border-radius: 2px;
+    background-color: inherit;
+    margin-bottom: 5px;
+}

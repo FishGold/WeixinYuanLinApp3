@@ -1,0 +1,42 @@
+html{
+    width: 100%;
+    margin: auto;
+    background-color: rgba(215, 255, 227, 0.99);
+}
+body{
+    width: inherit;
+    margin: auto;
+
+}
+.addPic{
+    width: 70px;
+    height: 70px;
+}
+#head{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5px;
+}
+table{
+    width: 95%;
+    margin: auto;
+}
+td,th{
+    border: 1px solid lavender;
+    border-collapse: collapse;
+}
+th{
+    width: 20%;
+    background-color: orange;
+    color: #ffffff;
+    font-weight: lighter;
+}
+caption{
+    background-color: orangered;
+    color: #ffffff;
+}
+div{
+    width: 100%;
+    margin-bottom: 50px;
+    //padding-bottom: 50px;
+}

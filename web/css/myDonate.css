@@ -1,0 +1,43 @@
+html{
+    background-color: #ffffff;
+    width: 100%;
+}
+body{
+    background-color: inherit;
+    width: 100%;
+}
+.plants-pic{
+    margin: auto;
+    width: 70px;
+    height: 70px;
+}
+li{
+    border-bottom: 1px solid gainsboro;
+}
+header{
+    width: inherit;
+    position: relative;
+}
+#header{
+    width: 100%;
+}
+#title{
+    position: absolute;
+    text-align: center;
+    background-color: mediumblue;
+    opacity: 0.6;
+    color: #ffffff;
+    letter-spacing: 10px;
+    bottom: 0px;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 0px;
+}
+.img{
+    width: 80px;
+    padding: 5px;
+    margin: auto;
+}
+table,li{
+    width: 100%;
+}

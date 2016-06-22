@@ -1,0 +1,51 @@
+html{
+    background-color: #eee1ff;
+    width: 100%;
+    font-family: "Lucida Grande", "Tahoma", serif;
+}
+body{
+    background-color: inherit;
+    width: 100%;
+    padding: 10px;
+}
+#header{
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+}
+#userinfo{
+    margin-left: 10px;
+    vertical-align: middle;
+}
+hr{
+    border: 1px solid #ffffff;
+    margin-top: 5px;
+}
+#name{
+    font-weight: lighter;
+    color: firebrick;
+}
+#number{
+    font-weight: lighter;
+    font-size: 3px;
+}
+.title{
+    color: limegreen;
+    letter-spacing: 5px;
+    font-weight: lighter;
+    font-size: 5px;
+    font-weight: lighter;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #174ac9;
+}
+.sign{
+    float: right;
+    margin-right: 5px;
+    color: mediumseagreen;
+}
+ul{
+    color: #44c940;
+}
