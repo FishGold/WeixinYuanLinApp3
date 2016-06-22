@@ -42,9 +42,11 @@ public class Oauth {
                 logger.info(openid);
                 SNSUserInfo userInfo =OAuthUtil.getUserInfo(access_token,openid);
                 boolean result =  snsUserDao.insertSNSUser(userInfo);
+                SNSUserInfo snsUserInfo = snsUserDao.getSNSUserInfo(openid);
+                Integer userId = new Integer(snsUserInfo.getId());
                 logger.info("oauth得到的结果"+result);
                 if (result == true){
-                    session.setAttribute("openId",openid);
+                    session.setAttribute("userId",userId);
                     logger.info("redirect:http://www.yunjoke.com"+state);
                     return  "redirect:http://www.yunjoke.com"+state;
                 }else {

@@ -7,5 +7,6 @@ import com.hbuas.pojo.entity.SNSUserInfo;
  */
 public interface SNSUserDao {
     public boolean insertSNSUser(SNSUserInfo snsUserInfo);
-    public SNSUserInfo getSNSUserInfo(String openid);
+    public SNSUserInfo getSNSUserInfo(String openId);
+    public SNSUserInfo getSNSUserInfoById(int id);
 }

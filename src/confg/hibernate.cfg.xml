@@ -15,10 +15,32 @@
 
         <!-- 生成数据表的策略 -->
         <property name="hibernate.hbm2ddl.auto">update</property>
-
+        
         <!-- 二级缓存相关 -->
 
         <!--使用getCurrrentSession相关配置-->
-        <property name="current_session_context_class">thread</property>
+        <!--<property name="hibernate.current_session_context_class">thread</property>-->
+
+        <!---基于注解配置的实体-->
+        <!--1、商城-->
+        <mapping class="com.hbuas.pojo.entity.shop.Ware"></mapping>
+        <!--<mapping class="com.hbuas.pojo.entity.shop.ShopOrder"></mapping>-->
+        <mapping class="com.hbuas.pojo.entity.shop.WareClassify"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.ShopImageUrl"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.PlantCategory"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.ShopCarousel"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.BuyRecord"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.ShopUserCollection"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.WareHeights"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.Assess"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.SearchRecord"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.Cart"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.ReceiveAddress"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.ShopOrder"></mapping>
+        <mapping class="com.hbuas.pojo.entity.shop.Store"></mapping>
+        <!--<mapping class="com.hbuas.pojo.entity.shop.ShopUser"></mapping>-->
+
+        <!---微信用户-->
+        <mapping class="com.hbuas.pojo.entity.SNSUserInfo"></mapping>
     </session-factory>
 </hibernate-configuration>

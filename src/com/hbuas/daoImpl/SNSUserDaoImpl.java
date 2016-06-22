@@ -24,7 +24,7 @@ public class SNSUserDaoImpl implements SNSUserDao {
         Transaction tx = null;
         Session session =null;
         try{
-            session = sessionFactory.openSession();
+            session = sessionFactory.getCurrentSession();
             tx = session.beginTransaction();
             /*查询数据库中是否曾在该用户，依据openId*/
             Query query = session.createQuery("from SNSUserInfo s where s.openId=:openid");
@@ -51,21 +51,27 @@ public class SNSUserDaoImpl implements SNSUserDao {
             logger.error("here"+e.getMessage());
             result = false;
             logger.error("用户插入数据库异常"+result);
-        }finally {
-            session.close();
         }
         return result;
     }
 
     @Override
-    public SNSUserInfo getSNSUserInfo(String openid) {
+    public SNSUserInfo getSNSUserInfo(String  openid) {
         SNSUserInfo snsUserInfo = null;
-        Session session = sessionFactory.openSession();
-        Query query = session.createQuery("from SNSUserInfo a where a.openId=:openid");
-        query.setString("openid",openid);
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from SNSUserInfo a where a.id=:id");
+        query.setString("id", openid);
         List<SNSUserInfo>  list= query.list();
         if (list!= null &&list.size()>=1)
             snsUserInfo = list.get(0);
         return snsUserInfo;
     }
+
+    @Override
+    public SNSUserInfo getSNSUserInfoById(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        SNSUserInfo s = (SNSUserInfo)session.get(SNSUserInfo.class,id);
+        return s;
+    }
+
 }

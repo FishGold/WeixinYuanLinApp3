@@ -1,0 +1,131 @@
+#head{
+    background-color: #e35050;
+    color: #ffffff;
+    padding: 6px;
+    color: #f7d2d2;
+    font-family: 'Microsoft Yahei', Arial;
+    font-size: 12px;
+}
+body{
+    background-color: lightgray;
+}
+#head img{
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    border: 2px solid #808080;
+    margin-left: 0px;
+}
+/*#talk i{*/
+    /*position: relative;*/
+    /*top: 20px;*/
+    /*background-color: #000000;*/
+    /*opacity: 0.2;*/
+    /*background-color: rgba(102, 102, 102, 0.5);*/
+    /*padding: 10px;*/
+    /*width: 40px;*/
+    /*height: 40px;*/
+    /*border-radius: 40px;*/
+
+/*}*/
+#plus{
+    position: relative;
+    top: 20px;
+    left: -8px;
+    font-weight: 100;
+    padding: 2px 5px;
+    color: #ffffff;
+
+}
+#nickname{
+    color: #f7d2d2;
+    font-family: 'Microsoft Yahei', Arial;
+    font-size: 12px;
+    margin-left: 12px;
+}
+#head .pull_right{
+    padding: 5px;
+    background-color: #000000;
+    opacity: 0.2;
+    border-radius: 20px;
+}
+
+.function_list{
+    width: 100%;
+    /*background-color: #ffffff;*/
+}
+.function_list ul{
+    padding-left: 0px;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 0px;
+    font-family: 'Microsoft Yahei', Arial;
+    font-size: 12px;
+}
+.function_list p{
+    font-size: 12px;
+    font-family: "楷体";
+    color: #808080;
+}
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+.function_list li{
+    list-style: none;
+    display: inline-block;
+    width: 23%;
+    margin: 0px;
+}
+.function_list .glyphicon{
+    padding: 15px;
+    border-radius: 20px;
+    font-size: larger;
+}
+.function_list .icon{
+    padding: 15px;
+    border-radius: 20px;
+    font-size: larger;
+}
+.bg_one{
+    background-color: rgba(253, 132, 79, 0.95);
+    color: #ffffff;
+}
+.bg_two{
+    background-color: rgba(48, 202, 226, 0.95);
+    color: #ffffff;
+}
+.bg_three{
+    background-color: rgba(143, 204, 25, 0.95);
+    color: #ffffff;
+}
+.bg_four{
+    background-color: rgba(253, 185, 24, 0.95);
+    color: #ffffff;
+}
+
+
+.list-group{
+    margin:15px 15px 10px 15px;
+    color: #808080;
+    font-size: 12px;
+    font-family: 'Microsoft Yahei', Arial;
+}
+.list-group .badge{
+    background-color: #e35050;
+    font-weight: 100;
+}
+#plusBtn{
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+#footer{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+a{
+    color: #808080;
+}

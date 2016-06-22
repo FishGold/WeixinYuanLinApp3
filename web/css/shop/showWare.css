@@ -1,0 +1,143 @@
+body {
+    margin-top: 0px;
+    font-size: 12px;
+    background-color: #cccccc;
+    font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+}
+.body{
+    width: 100%;
+}
+.body .img{
+    width: 100%;
+    max-height: 500px;
+}
+.body .type{
+    border-top: solid 1px #cccccc;
+    border-bottom: solid 10px #cccccc;
+    top: 10px;
+    background-color: #ffffff;
+    position: relative;
+}
+.body .bgStyle{
+    background-color: #ffffff;
+}
+.body .bott{
+    padding-bottom: 25px;
+}
+.body .comm .goodComm{
+    top: 15px;
+    position: relative;
+}
+p{
+    margin: 0 0;
+}
+ol{
+    display: inline;
+}
+ol li{
+    list-style: none;
+    display: inline-block;
+}
+ul{
+    display: inline;
+    border-top: solid 1px #cccccc;
+}
+ul li{
+    float: left;
+    list-style: none;
+    display: inline-block;
+}
+.li1{
+    right: 40%;
+    position:absolute;
+}
+#foot{
+    padding: 0px 5px;
+}
+.detail{
+    padding-right: 10%;
+}
+.comm{
+    padding: 5px 10px;
+}
+.price{
+    padding-bottom: 10px;
+}
+.price .price_1{
+    color:#FF4400;
+    font-weight: bold;
+}
+.price .number{
+    padding: 5px 0px;
+}
+.colorType{
+    padding: 10px 0px;
+}
+.price .price_1 .summary{
+    background-color: #FF4400;
+    font-size: 7px;
+    color: #ffffff;
+    padding: 2px;right: -5px;
+    position: relative
+}
+.font{
+    font-size: 10px;
+    color: #adadad;
+}
+.font2{
+    width: 10%;
+    font-size: 10px;
+    line-height: 18.9999990px;
+    border-right: solid 1px #cccccc;
+}
+.font3{
+    width: 35%;
+    font-size: 15px;
+    color: #ffffff;
+}
+.bg{
+    padding: 8px;
+    background-color: #FF9900;
+}
+.bg2{
+    padding: 8px;
+    background-color: #FF4200;
+}
+.user_img{
+    width: 20px;
+    height: 20px;
+}
+.name{
+    padding-left: 5px;
+}
+.top{
+    padding: 20px 0px;
+}
+.button{
+    top: 25px;
+    color: #FF4200;
+    padding: 2px 10px;
+    position: relative;
+    right: -35%;
+    border: solid 1px #FF4200;
+}
+.media .but{
+    font-size: 12px;
+    background-color: #E6E6E6;
+    color: #000000;
+    padding: 3px 5px;
+}
+.media .grups{
+    top: 10px;
+    position: relative;
+}
+.height_value{
+    font-weight: 100;
+    margin-left: 20px;
+}
+.form-group .pull-right input{
+    border-radius: 1px;
+    box-shadow: none;
+    position: relative;
+    left: -20px;
+}

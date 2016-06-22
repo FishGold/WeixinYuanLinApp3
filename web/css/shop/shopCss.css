@@ -1,0 +1,241 @@
+.carousel-indicators li{
+    width: 8px;
+    height: 8px;
+}
+.carousel-indicators{
+    margin-bottom: -8px;
+}
+.carousel-indicators .active{
+    width: 10px;
+    height: 10px;
+
+}
+body{
+    background-color:lightgray;
+    z-index: 500;
+}
+#myCarousel{
+    margin: 2% 0px;
+}
+.function_list{
+    width: 100%;
+    background-color: #ffffff;
+}
+.function_list ul{
+    padding-left: 0px;
+
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 0px;
+}
+.function_list p{
+    font-size: 12px;
+    font-family: "楷体";
+}
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+.function_list li{
+    list-style: none;
+    display: inline-block;
+    width: 23%;
+    margin: 0px;
+}
+.function_list .glyphicon{
+    padding: 15px;
+    border-radius: 20px;
+    font-size: larger;
+}
+/*.fun_item{*/
+    /*border: 1px solid red;*/
+    /*width: 100%;*/
+    /*border-radius: 25px;*/
+    /*padding-top: 5px;*/
+/*}*/
+/*.fun_item:last-child{*/
+    /*font-size: 12px;*/
+
+/*}*/
+/*.fun_item:first-child{*/
+    /*padding-top: 5px;*/
+    /*font-size: 16px;*/
+/*}*/
+.bg_one{
+    background-color: rgba(253, 132, 79, 0.95);
+    color: #ffffff;
+}
+.bg_two{
+    background-color: rgba(48, 202, 226, 0.95);
+    color: #ffffff;
+}
+.bg_three{
+    background-color: rgba(143, 204, 25, 0.95);
+    color: #ffffff;
+}
+.bg_four{
+    background-color: rgba(253, 185, 24, 0.95);
+    color: #ffffff;
+}
+.top_box span{
+    background-color: #ffffff;
+}
+.top_box .input-group-addon:first-child{
+    border-right: none;
+}
+#top_input{
+    border-left: none;
+    box-shadow: none;
+    border-color: #cccccc;
+    border-radius: 0px 5px 5px 0px ;
+}
+.top_box {
+    margin: 2% 2% 1% 2%;
+}
+#top_btn{
+    font-size: 12px;
+    border-radius: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: rgba(71, 163, 71, 0.95);
+}
+#top_space_span{
+    background-color:lightgray;
+    border: none;
+    padding-left: 0px;
+}
+.scroll_box{
+    background-color: #ffffff;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.main{
+
+    font-family: 'Microsoft Yahei',Arial;
+    padding: 8px;
+}
+.main_item{
+    border: 1px solid #808080;
+
+}
+.tree{
+    width: 100%;
+    height: 80%;
+
+}
+a{
+    text-decoration: none;
+}
+.item_slide{
+    background-color:#000000;
+    opacity: 0.4;
+    margin-top: -27px;
+}
+.text{
+    text-align: center;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 5px;
+    width: auto;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.money{
+    margin-top: -12.9px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #ffffff;
+}
+span.price{
+    color: red;
+    font-size: larger;
+}
+s{
+    margin-top: 4px;
+    color: darkgray;
+    float: right;
+}
+.count{
+    color: darkgray;
+    font-size: 90%;
+}
+.sort_item{
+    margin-top: 3%;
+}
+.sort_item_head{
+    background-color: #ffffff;
+    margin-top: 1%;
+    padding: 10px;
+}
+.sort_item_body{
+    /*background-color: #ffffff;*/
+}
+.sort_item_head .name{
+    font-weight: bolder;
+    color: chocolate;
+   font-family: "微软雅黑";
+}
+.sort_item_head .more{
+    color: #808080;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.one_img{
+    padding: 2px;
+    margin-bottom:1%;
+    display: inline-block;
+    width: 32%;
+}
+.one_img p{
+   float: left;
+    margin-top: -27px;
+    width: 100%;
+    padding: 5px;
+    background-color: #000000;
+    opacity: 0.5;
+    margin-bottom: 0px;
+    color: #ffffff;
+    font-size: 12px;
+}
+.one_img img{
+    width: 100%;
+    border: 1px solid #808080;
+}
+.guss{
+   background-color: #ffffff;
+    margin-top: 2%;
+    padding:10px;
+    color: red;
+
+}
+.guss p{
+    margin-bottom: 0px;
+    font-weight: bolder;
+    font-family: "微软雅黑";
+}
+#fix_menu{
+    position: fixed;
+    right: 0px;
+    bottom: 4%;
+    background-color: #000000;
+    opacity: 0.5;
+    z-index: 1000;
+}
+#fix_menu div{
+    padding: 6px;
+    color: #ffffff;
+    font-family: "楷体";
+
+}
+#fix_menu p{
+    margin-bottom: 0px;
+    font-size: smaller;
+    font-weight: 100;
+}
+#fix_menu span{
+    font-size: 16px;
+}
