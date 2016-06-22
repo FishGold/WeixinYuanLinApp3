@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+       <class name="com.hbuas.pojo.entity.PlantReportInfo" table="plant_ill_report_info">
+              <id name="id">
+                     <generator class="native"></generator>
+              </id>
+              <property name="userId" not-null="true"/>
+              <property name="describeAboutPlant" not-null="true"/>
+              <property name="addressAboutReport" not-null="true"/>
+              <property name="detailAddressAboutPlant" not-null="true"/>
+              <property name="illPlantImagesAddress" not-null="true"/>
+              <property name="reportDate" not-null="true"/>
+       </class>
+</hibernate-mapping>
